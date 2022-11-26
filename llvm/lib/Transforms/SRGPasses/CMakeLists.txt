@@ -11,7 +11,7 @@ if(WIN32 OR CYGWIN)
 endif()
 
 add_llvm_library( LLVMSRGPasses MODULE BUILDTREE_ONLY
-  #BBInstructionCounter.cpp
+  BBStats.cpp
 
   DEPENDS
   intrinsics_gen
