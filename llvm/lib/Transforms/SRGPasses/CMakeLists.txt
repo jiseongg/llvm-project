@@ -12,6 +12,7 @@ endif()
 
 add_llvm_library( LLVMSRGPasses MODULE BUILDTREE_ONLY
   BBStats.cpp
+  BBTracer.cpp
 
   DEPENDS
   intrinsics_gen
