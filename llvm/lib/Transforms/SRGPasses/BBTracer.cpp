@@ -22,7 +22,7 @@ STATISTIC(BBTracerCounter, "Counts number of functions greeted");
 namespace {
 
   void insertTracerCall(Module *M, LLVMContext &C, BasicBlock &bb, std::string bb_id, FunctionCallee fc) {
-    Instruction *firstInst =  (Instruction*) &(*bb.begin());
+    Instruction *firstInst =  bb.getFirstNonPHI();
     std::vector<Value*> args;
     IRBuilder<> Builder(&bb, bb.begin());
     StringRef str = StringRef(bb_id);
